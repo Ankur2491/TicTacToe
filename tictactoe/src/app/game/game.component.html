@@ -1,0 +1,35 @@
+<ng4-loading-spinner [timeout]="4000" [loadingText]="'Starting Game...'" ></ng4-loading-spinner>
+<h1>Playground</h1>
+<table [ngStyle]="tableStyle">
+  <tr>
+    <td  (click)="clicked(0,0)"><img width="100"src="{{pic[0][0]}}"></td>
+    <td  class="vert" (click)="clicked(0,1)" style><img width="100" src="{{pic[0][1]}}"></td>
+    <td  (click)="clicked(0,2)"><img width="100" src="{{pic[0][2]}}"></td>
+  </tr>
+  <tr>
+    <td class="hori" (click) = "clicked(1,0)"><img width="100"width="100" src="{{pic[1][0]}}"></td>
+    <td class="vert hori" (click) = "clicked(1,1)"><img width="100" src="{{pic[1][1]}}"></td>
+    <td class="hori" (click) = "clicked(1,2)"><img width="100" src="{{pic[1][2]}}"></td>
+  </tr>
+  <tr>
+    <td (click) = "clicked(2,0)"><img width="100" src="{{pic[2][0]}}"></td>
+    <td class="vert" (click) = "clicked(2,1)"><img width="100" src="{{pic[2][1]}}"></td>
+    <td (click) = "clicked(2,2)"><img width="100" src="{{pic[2][2]}}"></td>
+  </tr>
+</table>
+<div *ngIf="turn">
+  <img width="200" src="../../assets/images/turn.gif">
+</div>
+<div *ngIf="ifWin">
+  <img width="200" src="https://media.giphy.com/media/l0HUnQR733uhm48UM/giphy.gif">
+  <button class="btn-primary" (click)="goToHome()">Back</button>
+</div>
+<div *ngIf="ifLose">
+  <img width="200" src="https://media.giphy.com/media/l3q2J7KgtglQ5GQH6/giphy.gif">
+  <button class="btn-primary" (click)="goToHome()">Back</button>
+</div>
+<div *ngIf="ifDraw">
+  <h3>Its a Draw!!</h3>
+  <img width="200" src="https://media.giphy.com/media/3o6EhYD3bYE5iHiHlu/giphy.gif">
+  <button class="btn-primary" (click)="goToHome()">Back</button>
+</div>

@@ -1,0 +1,17 @@
+<form #su="ngForm" (ngSubmit)="onSubmit(su.value)">
+  <div class="form-group">
+    <label for="userId">USER-ID:</label>
+    <input type="text" class="form-control" id="loginId" placeholder="pick a user-id" name="uid" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="pass">PASSWORD:</label>
+    <input type="password" class="form-control" id="pid" placeholder="choose a password" name="pwd" ngModel>
+  </div>
+  <button type="submit" class="btn btn-default">Register</button>
+  <div *ngIf="isSuccess">
+    <span class="label label-success">User Registered!!</span>
+  </div>
+  <div *ngIf="isFailure">
+    <span class="label label-danger">User Already exists!!</span>
+  </div>
+</form>

@@ -1,0 +1,54 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TicTacToe{{message}}</a>
+    </div>
+    <ul *ngIf="!isLoggedIn" class="nav navbar-nav" style="float:right">
+      <li>
+        <a routerLink="/login">Login/Signup</a>
+      </li>
+    </ul>
+    <ul *ngIf="isLoggedIn" class="nav navbar-nav" style="float:right">
+      <li>
+        <a href="#" (click) = "signout()">Signout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div *ngIf="!isLoggedIn" align="center">
+  <img width="400" alt="Game Logo" src="assets/images/2000px-Tic_tac_toe.svg.png">
+</div>
+<!--
+<section class="container">
+  <div class="one">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">Login</button>
+  </div>
+  <div class="two">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#signup">Signup</button>
+  </div>
+</section> -->
+<!-- <div class="container">
+    <div class="row">
+            <app-login></app-login>
+            <app-signup></app-signup>
+    </div>
+</div> -->
+<!-- <div *ngIf="!isLoggedIn">
+  <nav>
+    <button class="btn btn-info navbar-btn">
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    </button>
+    <button class="btn btn-info navbar-btn">
+      <a routerLink="/signup" routerLinkActive="active">Signup</a>
+    </button>
+  </nav>
+</div>
+<div *ngIf="isLoggedIn">
+  <nav>
+    <button class="btn btn-info navbar-btn">
+      <a routerLink="/signout" routerLinkActive="active">Signout</a>
+    </button>
+  </nav>
+</div> -->
+<router-outlet></router-outlet>
